@@ -4,7 +4,7 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 1;        /* 0 means bottom bar */
+static const int topbar             = 0;        /* 0 means bottom bar */
 static const char *fonts[]          = {  "Liberation Mono:pixelsize=16:antialias=true:autohint=true" };
 static const char dmenufont[]       = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
 
@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg0, "-nf", col_fg4, "-sb", col_bg2, "-sf", col_fg1, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg0, "-nf", col_fg4, "-sb", col_bg2, "-sf", col_fg1, "-b", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 static Key keys[] = {
