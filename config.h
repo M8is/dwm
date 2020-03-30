@@ -5,8 +5,8 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const char *fonts[]          = {  "Liberation Mono:pixelsize=16:antialias=true:autohint=true" };
-static const char dmenufont[]       = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
+static const char *fonts[]          = {  "Liberation Mono:pixelsize=32:antialias=true:autohint=true" };
+static const char dmenufont[]       = "Liberation Mono:pixelsize=32:antialias=true:autohint=true";
 
 /* Colors inspired by gruvbox theme (https://github.com/morhetz/gruvbox) */
 static const char col_bg0[]          = "#282828";
