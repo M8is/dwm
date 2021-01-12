@@ -1,5 +1,4 @@
 /* See LICENSE file for copyright and license details. */
-
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -60,8 +59,11 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg0, "-nf", col_fg4, "-sb", col_bg2, "-sf", col_fg1, "-b", NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *dmenucmd[]      = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_bg0, "-nf", col_fg4, "-sb", col_bg2, "-sf", col_fg1, "-b", NULL };
+static const char *termcmd[]       = { "st", NULL };
+static const char *autoscreencmd[] = { "xrandr", "--auto", NULL};
+static const char *abovescreencmd[] = { "disp", "above", NULL};
+static const char *secondscreencmd[] = { "disp", "second", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -90,6 +92,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ControlMask|ShiftMask, XK_d,      spawn,          {.v = autoscreencmd } },
+	{ MODKEY|ControlMask|ShiftMask, XK_s,      spawn,          {.v = secondscreencmd } },
+	{ MODKEY|ControlMask|ShiftMask, XK_Up,     spawn,          {.v = abovescreencmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
